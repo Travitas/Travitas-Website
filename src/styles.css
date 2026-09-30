@@ -1,0 +1,68 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Instrument Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(14% 0.03 262);
+  --foreground: oklch(97% 0.01 85);
+  --card: oklch(19% 0.035 262);
+  --card-foreground: oklch(97% 0.01 85);
+  --popover: oklch(19% 0.035 262);
+  --popover-foreground: oklch(97% 0.01 85);
+  --primary: oklch(76% 0.17 60);
+  --primary-foreground: oklch(16% 0.03 262);
+  --secondary: oklch(24% 0.04 262);
+  --secondary-foreground: oklch(97% 0.01 85);
+  --muted: oklch(22% 0.035 262);
+  --muted-foreground: oklch(72% 0.03 262);
+  --accent: oklch(72% 0.12 195);
+  --accent-foreground: oklch(16% 0.03 262);
+  --destructive: oklch(68% 0.2 25);
+  --border: oklch(100% 0 0 / 0.12);
+  --input: oklch(100% 0 0 / 0.16);
+  --ring: oklch(76% 0.17 60);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
