@@ -134,7 +134,7 @@ function AccentTitle({ children, accent }: { children: React.ReactNode; accent: 
 
 function CtaButton({ children, secondary = false, role }: { children: React.ReactNode; secondary?: boolean; role?: WaitlistRole }) {
   const { openWaitlist } = useWaitlist();
-  return <button type="button" onClick={() => openWaitlist(role)} className={secondary ? "button button-secondary" : "button button-primary"}>{children}<ArrowRight size={14} /></button>;
+  return <Button type="button" onClick={() => openWaitlist(role)} className={secondary ? "button button-secondary" : "button button-primary"}>{children}<ArrowRight size={14} /></Button>;
 }
 
 function SiteHeader() {
@@ -154,7 +154,7 @@ function SiteHeader() {
       <nav aria-label="Primary navigation">
         <a href="#how">How it works</a><a href="#sellers">Sellers</a><a href="#buyers">Buyers</a><a href="#network">Network</a>
       </nav>
-      <button type="button" className="header-cta" onClick={() => openWaitlist()}>Join the waitlist</button>
+      <Button type="button" className="header-cta" onClick={() => openWaitlist()}>Join the waitlist</Button>
     </header>
   );
 }
@@ -247,7 +247,7 @@ function Why() {
 
 function Join() {
   const { openWaitlist } = useWaitlist();
-  return <><section id="join" className="section join"><Eyebrow>For the founding community</Eyebrow><h2>Don't join after <em>everyone else has.</em></h2><p>Travitas is opening its network progressively. We're bringing in our first group of founding sellers and founding buyers before opening the network wider.</p><div className="join-grid"><article><Building2 /><h3>Are you a seller?</h3><p>Put your business in front of the travel trade.</p><button type="button" onClick={() => openWaitlist("seller")}>Join as a Seller <ArrowRight /></button></article><article><Search /><h3>Are you a buyer?</h3><p>Tell us what you need and discover the right trade partners.</p><button type="button" onClick={() => openWaitlist("buyer")}>Join as a Buyer <ArrowRight /></button></article></div><strong>Be there before the network gets crowded.</strong></section><section className="final-cta" style={{ backgroundImage: `linear-gradient(var(--cta-shade), var(--cta-shade)), url(${cta.url})` }}><Eyebrow>The travel trade is about to get a new meeting ground</Eyebrow><p>The next hotel booking. &nbsp; The next destination wedding. &nbsp; The next corporate group. &nbsp; The next tour.<br />The next MICE requirement. &nbsp; The next partnership.</p><h2>It could start<br /><em>on Travitas.</em></h2><p className="launch-script">We're live. Happy World Tourism Day.</p><div className="button-row"><CtaButton role="buyer">Join as a Buyer</CtaButton><CtaButton role="seller" secondary>Join as a Seller</CtaButton></div><small>Be among the first to experience India's new B2B travel network.</small></section></>;
+  return <><section id="join" className="section join"><Eyebrow>For the founding community</Eyebrow><h2>Don't join after <em>everyone else has.</em></h2><p>Travitas is opening its network progressively. We're bringing in our first group of founding sellers and founding buyers before opening the network wider.</p><div className="join-grid"><article><Building2 /><h3>Are you a seller?</h3><p>Put your business in front of the travel trade.</p><Button type="button" variant="link" className="join-link" onClick={() => openWaitlist("seller")}>Join as a Seller <ArrowRight /></Button></article><article><Search /><h3>Are you a buyer?</h3><p>Tell us what you need and discover the right trade partners.</p><Button type="button" variant="link" className="join-link" onClick={() => openWaitlist("buyer")}>Join as a Buyer <ArrowRight /></Button></article></div><strong>Be there before the network gets crowded.</strong></section><section className="final-cta" style={{ backgroundImage: `linear-gradient(var(--cta-shade), var(--cta-shade)), url(${cta.url})` }}><Eyebrow>The travel trade is about to get a new meeting ground</Eyebrow><p>The next hotel booking. &nbsp; The next destination wedding. &nbsp; The next corporate group. &nbsp; The next tour.<br />The next MICE requirement. &nbsp; The next partnership.</p><h2>It could start<br /><em>on Travitas.</em></h2><p className="launch-script">We're live. Happy World Tourism Day.</p><div className="button-row"><CtaButton role="buyer">Join as a Buyer</CtaButton><CtaButton role="seller" secondary>Join as a Seller</CtaButton></div><small>Be among the first to experience India's new B2B travel network.</small></section></>;
 }
 
 function Footer() {
